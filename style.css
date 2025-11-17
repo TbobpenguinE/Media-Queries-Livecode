@@ -65,25 +65,29 @@ body {
   #indigo {
     text-decoration: line-through;
     background-color: coral;
+    color:red;
   }
 }
 
 /* Phone size */
-@media screen and (width < 400px) {
-  #blue {
-    text-decoration: overline;
-    background-color: limegreen;
+@media screen and (width <= 500px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "red blue"
+      "green yellow"
+      "violet black";
   }
-  .grid-container { 
-      grid-template-areas: 
-      "red    red    red    red"
-      "green  green  green  green"
-      "indigo indigo indigo indigo"
-      "orange orange orange orange"
-      "yellow yellow yellow yellow"
-      "black  black  black  black";
-    }
+
+  #orange {
+    display: none;
+  }
+  #indigo {
+    display: none;
+  }
 }
+
 
 /* Tablet size */
 @media screen and (500px < width < 700px) {
@@ -103,16 +107,13 @@ body {
 }
 
 /* Desktop size */
-@media screen and (width > 1000px) {
+@media screen and (width > 900px) {
   .grid-container { 
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-areas: 
-      "red    red    orange yellow orange"
+      "red   red   red  red  orange"
       "green  green  green  blue orange"
       "indigo indigo violet violet yellow"
       "black  black  black  black yellow";
-    }
-    #orange {
-      display: none;
     }
 }
